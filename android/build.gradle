@@ -1,0 +1,22 @@
+buildscript {
+    ext {
+        buildToolsVersion = "35.0.0"  // Downgraded to 35 (Stable) to be safe
+        minSdkVersion = 24
+        compileSdkVersion = 35        // Downgraded to 35 (Stable)
+        targetSdkVersion = 35         // Downgraded to 35 (Stable)
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.0.20"      // Standard stable Kotlin for React Native
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // FIXED: Added specific version 8.7.2
+        classpath("com.android.tools.build:gradle:8.7.2")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"
